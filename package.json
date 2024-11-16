@@ -1,6 +1,6 @@
 {
   "name": "exif-restorer",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "A tool to generate a blog without CSS",
   "type": "module",
   "author": "yurucam",

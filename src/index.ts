@@ -43,7 +43,7 @@ export class ExifRestorer {
   }
 
   static restore(origFileBase64: string, resizedFileBase64: string): string {
-    const extension = resizedFileBase64.match(/data:image\/(\w+);base64,/)[1];
+    const extension = resizedFileBase64.match(/data:image\/(\w+);base64,/)[0];
 
     if (!origFileBase64.match(/data:image\/\w+;base64,/)) {
       return resizedFileBase64;
@@ -137,6 +137,9 @@ export class ExifRestorer {
 
     // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
     if (/[^A-Za-z0-9\+\/\=]/g.exec(base64)) {
+      console.error(
+        "There were invalid base64 characters in the input text. Valid base64 characters are A-Z, a-z, 0-9, '+', '/',and '=' Expect errors in decoding."
+      );
       throw new Error(
         "There were invalid base64 characters in the input text. Valid base64 characters are A-Z, a-z, 0-9, '+', '/',and '=' Expect errors in decoding."
       );
