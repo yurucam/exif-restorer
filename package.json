@@ -1,0 +1,30 @@
+{
+  "name": "exif-restorer",
+  "version": "0.1.6",
+  "description": "A tool to generate a blog without CSS",
+  "type": "module",
+  "author": "yurucam",
+  "keywords": [
+    "exif"
+  ],
+  "bin": {
+    "exif-restorer": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yurucam/exif-restorer"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf dist && rm -rf dist",
+    "build": "tsc",
+    "test": "npm run build && node dist/index.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.2",
+    "typescript": "^5.6.3"
+  }
+}
